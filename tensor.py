@@ -11,6 +11,7 @@ def import_to_array(img_path):
     contrast = ImageEnhance.Contrast
     img = brightness(img).enhance(2.0)
     img = contrast(img).enhance(2.0)
+    img = img.resize((28, 28))
     
     img_array = np.array(img)
     img_array = np.invert(img_array)
