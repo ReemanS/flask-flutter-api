@@ -11,11 +11,7 @@ def import_to_array(img_path):
     contrast = ImageEnhance.Contrast
     img = brightness(img).enhance(2.0)
     img = contrast(img).enhance(2.0)
-    opened_img = img
-    opened_img.save('1opened.png')
-    img = img.resize((28, 28))
-    cropped_img = img
-    cropped_img.save('2cropped.png')
+    
     img_array = np.array(img)
     img_array = np.invert(img_array)
     img_array = (img_array/255.0).astype('float32')
